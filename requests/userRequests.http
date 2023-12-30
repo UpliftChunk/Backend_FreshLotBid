@@ -1,0 +1,78 @@
+# ..get current user details
+GET http://localhost:4000/api/v1/me
+
+###
+
+# ..change password at profile
+PUT http://localhost:4000/api/v1/password/update
+Content-Type: application/json
+
+{
+   "oldPassword" : "Try12345",
+   "newPassword" : "Real1234",
+   "confirmPassword" : "Real1234"
+}
+
+###
+
+# ..update user profile detail
+PUT http://localhost:4000/api/v1/me/update
+Content-Type: application/json
+
+{
+   "name": "TryUser",
+   "email": "trychess002@gmail.com"
+}
+###
+
+# ..get user details with name
+GET http://localhost:4000/api/v1/users?name=ram
+
+###
+# ..send friend req
+GET http://localhost:4000/api/v1/users/add/656707258b615561be48da18
+
+###
+# ..cancel friend req
+GET http://localhost:4000/api/v1/users/cancel/6566fc72ad9ed39dc3ac7b36
+
+###
+# ..handle friend req status
+GET http://localhost:4000/api/v1/users/connection?id=656c5e7b9b1791d6e9c59c7e&status=Accepted
+
+###
+###
+# ..add bid request to friend
+POST http://localhost:4000/api/v1/users/addbidrequest
+Content-Type: application/json
+
+{
+      "lotID":"6551d09b07fb1482f5312be1" ,
+      "friendid":"656707258b615561be48da18" ,
+      "price": 5000,
+      "quantity":  15,
+      "description":"great textured fruits"
+}
+###
+###
+# ..reject bid request from friend
+POST http://localhost:4000/api/v1/users/rejectbidrequest
+Content-Type: application/json
+
+{
+      "lotID":"6551d09b07fb1482f5312be1" ,
+      "friendid":"656707258b615561be48da18" 
+}
+###
+###
+# ..accept bid request from friend
+POST http://localhost:4000/api/v1/lot/Acceptbidrequest
+Content-Type: application/json
+
+{
+      "lotID":"6551d06407fb1482f5312bde" ,
+      "friendid":"656707258b615561be48da18" ,
+      "price": 10000,
+      "description":"great quality fruits"
+}
+###

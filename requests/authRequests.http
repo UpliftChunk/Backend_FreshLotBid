@@ -1,0 +1,88 @@
+# ..Register new user
+POST http://localhost:4000/api/v1/register
+Content-Type: application/json
+
+{
+   "name": "Kiran",
+   "email": "farmerKisan@gmail.com",
+   "location": "Isnapur",
+   "password": "Real1234",
+   "phoneNumber": "9999988222"
+}
+###
+
+# ..(1)login role:farmer -Kiran
+POST http://localhost:4000/api/v1/login
+Content-Type: application/json
+
+{
+   "email": "farmerKisan@gmail.com",
+   "password": "Real1234"
+}
+###
+
+# ..(2)login role:farmer -Sharuk
+POST http://localhost:4000/api/v1/login
+Content-Type: application/json
+
+{
+   "email": "tempeverything040@gmail.com",
+   "password": "Real1234"
+}
+
+###
+
+# ..(2.2)login role:farmer -realuser6
+POST http://localhost:4000/api/v1/login
+Content-Type: application/json
+
+{
+   "email": "tempeverything143@gmail.com",
+   "password": "Real1234"
+}
+###
+
+# ..(2.3)login role:farmer -ramu
+POST http://localhost:4000/api/v1/login
+Content-Type: application/json
+
+{
+   "email": "farmer2@gmail.com",
+   "password": "Real1234"
+}
+
+###
+
+# ..(3)login role:customer
+POST http://localhost:4000/api/v1/login
+Content-Type: application/json
+
+{
+   "email": "customerMonk@gmail.com",
+   "password": "customer123"
+}
+###
+
+# ..logout user 
+GET http://localhost:4000/api/v1/logout
+###
+
+# ..forget password
+POST http://localhost:4000/api/v1/password/forgot
+Content-Type: application/json
+
+{
+   "email": "tempeverything040@gmail.com"
+}
+###
+
+# ..reset password
+PUT http://localhost:4000/api/v1/password/reset/14e36ddfbc50d80a51c2e4c5e5430bfcd00d44c1
+Content-Type: application/json
+
+{
+   "password": "Real1234",
+   "confirmPassword": "Real1234"
+}
+
+###

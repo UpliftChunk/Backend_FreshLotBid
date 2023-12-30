@@ -1,0 +1,41 @@
+###
+
+#  ..Get all Lots Details - FARMER
+GET http://localhost:4000/api/v1/lots
+###
+
+#  ..Get CUSTOMER Lots Details - CUSTOMER
+GET http://localhost:4000/api/v1/customer/lots
+###
+
+#  ..Get single Lot Details - FARMER
+GET http://localhost:4000/api/v1/lot/6551cf9f07fb1482f5312bcf
+###
+
+#  ...Create new lot  - Customer 
+POST http://localhost:4000/api/v1/customer/lot/new
+Content-Type: application/json
+
+{
+   "vegi_name": "Dry Popcorn Maize",
+   "description": "Looking only for quality crop",
+   "quantity": "10",
+   "image": "https://ueirorganic.com/image/cache/catalog/1%20New%20/Dry%20Corn-800x800.png"
+      
+}
+
+
+
+###
+
+
+# ..Add/modify lot bid - Farmer
+POST http://localhost:4000/api/v1/lot/bid
+Content-Type: application/json
+
+{
+   "lotId" : "654d3556ec0c7a8d55252a4c",
+   "description" : "I have best soil for this crop, can produce within 2 months",
+   "price" : 5000
+}
+###
